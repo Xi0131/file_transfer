@@ -1,0 +1,33 @@
+{
+    "args": {
+        "accuracy": false,
+        "audit_conf": "audit.config",
+        "backend": "pytorch",
+        "count": null,
+        "dataset": "coco-1024",
+        "dataset_path": "/home/mlcuser/MLC/repos/local/cache/get-dataset-coco2014_75c4654e",
+        "debug": false,
+        "device": "cuda",
+        "dtype": "fp32",
+        "find_peak_performance": false,
+        "ids_path": "tools/sample_ids.txt",
+        "latent_framework": "torch",
+        "max_batchsize": 1,
+        "max_latency": null,
+        "model_name": "stable-diffusion-xl",
+        "model_path": "/home/mlcuser/MLC/repos/local/cache/download-file_411c878c/stable_diffusion_fp32",
+        "output": "/home/mlcuser/MLC/repos/local/cache/get-mlperf-inference-results-dir_6966f6c5/test_results/b40dd887c34c-reference-gpu-pytorch-v2.6.0-cu124/stable-diffusion-xl/offline/performance/run_1",
+        "performance_sample_count": 5000,
+        "profile": "stable-diffusion-xl-pytorch",
+        "qps": null,
+        "samples_per_query": 8,
+        "scenario": "Offline",
+        "threads": 1,
+        "time": null,
+        "user_conf": "/home/mlcuser/MLC/repos/mlcommons@mlperf-automations/script/generate-mlperf-inference-user-conf/tmp/59f2ec1f4f134778a35544018904c3be.conf"
+    },
+    "cmdline": "Namespace(dataset='coco-1024', dataset_path='/home/mlcuser/MLC/repos/local/cache/get-dataset-coco2014_75c4654e', profile='stable-diffusion-xl-pytorch', scenario='Offline', max_batchsize=1, threads=1, accuracy=False, find_peak_performance=False, backend='pytorch', model_name='stable-diffusion-xl', output='/home/mlcuser/MLC/repos/local/cache/get-mlperf-inference-results-dir_6966f6c5/test_results/b40dd887c34c-reference-gpu-pytorch-v2.6.0-cu124/stable-diffusion-xl/offline/performance/run_1', qps=None, model_path='/home/mlcuser/MLC/repos/local/cache/download-file_411c878c/stable_diffusion_fp32', dtype='fp32', device='cuda', latent_framework='torch', user_conf='/home/mlcuser/MLC/repos/mlcommons@mlperf-automations/script/generate-mlperf-inference-user-conf/tmp/59f2ec1f4f134778a35544018904c3be.conf', audit_conf='audit.config', ids_path='tools/sample_ids.txt', time=None, count=None, debug=False, performance_sample_count=5000, max_latency=None, samples_per_query=8)",
+    "runtime": "pytorch-SUT",
+    "time": 1738860563,
+    "version": "2.6.0+cu124"
+}

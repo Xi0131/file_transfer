@@ -1,0 +1,7 @@
+{
+  "system_name": "aa7b3e752dec",
+  "implementation": "nvidia",
+  "device": "gpu",
+  "framework": "TensorRT",
+  "run_config": "default_config"
+}

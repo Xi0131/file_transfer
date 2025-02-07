@@ -1,0 +1,82 @@
+python3 python/main.py --profile resnet50-tf --model "/home/mlcuser/MLC/repos/local/cache/download-file_04d6db49/resnet50_v1.pb" --dataset-path /home/mlcuser/MLC/repos/local/cache/get-preprocessed-dataset-imagenet_f55dfe4e --output "/home/mlcuser/MLC/repos/local/cache/get-mlperf-inference-results-dir_6966f6c5/test_results/c7f962670228-reference-gpu-tf-v2.18.0-cu124/resnet50/offline/performance/run_1" --scenario Offline --threads 2 --user_conf /home/mlcuser/MLC/repos/mlcommons@mlperf-automations/script/generate-mlperf-inference-user-conf/tmp/544f6896e4e2420bbdb06d6fa247e19c.conf --use_preprocessed_dataset --cache_dir /home/mlcuser/MLC/repos/local/cache/get-preprocessed-dataset-imagenet_f55dfe4e --dataset-list /home/mlcuser/MLC/repos/local/cache/extract-file_ae520779/val.txt
+INFO:main:Namespace(dataset='imagenet', dataset_path='/home/mlcuser/MLC/repos/local/cache/get-preprocessed-dataset-imagenet_f55dfe4e', dataset_list='/home/mlcuser/MLC/repos/local/cache/extract-file_ae520779/val.txt', data_format=None, profile='resnet50-tf', scenario='Offline', max_batchsize=32, model='/home/mlcuser/MLC/repos/local/cache/download-file_04d6db49/resnet50_v1.pb', output='/home/mlcuser/MLC/repos/local/cache/get-mlperf-inference-results-dir_6966f6c5/test_results/c7f962670228-reference-gpu-tf-v2.18.0-cu124/resnet50/offline/performance/run_1', inputs=['input_tensor:0'], outputs=['ArgMax:0'], backend='tensorflow', device=None, model_name='resnet50', threads=2, qps=None, cache=0, cache_dir='/home/mlcuser/MLC/repos/local/cache/get-preprocessed-dataset-imagenet_f55dfe4e', preprocessed_dir=None, use_preprocessed_dataset=True, accuracy=False, find_peak_performance=False, debug=False, user_conf='/home/mlcuser/MLC/repos/mlcommons@mlperf-automations/script/generate-mlperf-inference-user-conf/tmp/544f6896e4e2420bbdb06d6fa247e19c.conf', audit_conf='audit.config', time=None, count=None, performance_sample_count=None, max_latency=None, samples_per_query=8)
+2025-02-06 18:30:27.957675: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-02-06 18:30:28.219738: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1738866628.318630    2520 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1738866628.345359    2520 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-02-06 18:30:28.611799: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+INFO:matplotlib.font_manager:generated new fontManager
+INFO:imagenet:Loading 50000 preprocessed images using 2 threads
+INFO:imagenet:loaded 50000 images, cache=0, already_preprocessed=True, took=0.7sec
+WARNING:tensorflow:From /home/mlcuser/MLC/repos/local/cache/get-git-repo_7616a5a9/inference/vision/classification_and_detection/python/backend_tf.py:55: FastGFile.__init__ (from tensorflow.python.platform.gfile) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.gfile.GFile.
+WARNING:tensorflow:From /home/mlcuser/venv/mlc/lib/python3.10/site-packages/tensorflow/python/tools/strip_unused_lib.py:84: extract_sub_graph (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This API was designed for TensorFlow v1. See https://www.tensorflow.org/guide/migrate for instructions on how to migrate your code to TensorFlow v2.
+WARNING:tensorflow:From /home/mlcuser/venv/mlc/lib/python3.10/site-packages/tensorflow/python/tools/optimize_for_inference_lib.py:138: remove_training_nodes (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This API was designed for TensorFlow v1. See https://www.tensorflow.org/guide/migrate for instructions on how to migrate your code to TensorFlow v2.
+I0000 00:00:1738866680.487039    2520 gpu_device.cc:2022] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 43370 MB memory:  -> device: 0, name: NVIDIA A40-48Q, pci bus id: 0000:03:00.0, compute capability: 8.6
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1738866680.632875    2520 mlir_graph_optimization_pass.cc:401] MLIR V1 optimization pass is not enabled
+E0000 00:00:1738866682.548284    2554 cuda_dnn.cc:522] Loaded runtime CuDNN library: 9.0.0 but source was compiled with: 9.3.0.  CuDNN library needs to have matching major version and equal or higher minor version. If using a binary install, upgrade your CuDNN library.  If building from sources, make sure the library loaded at runtime is compatible with the version specified during compile configuration.
+2025-02-06 18:31:22.550274: W tensorflow/core/framework/op_kernel.cc:1841] OP_REQUIRES failed at conv_ops_fused_impl.h:625 : INVALID_ARGUMENT: No DNN in stream executor.
+2025-02-06 18:31:22.550306: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: INVALID_ARGUMENT: No DNN in stream executor.
+	 [[{{node resnet_model/Relu}}]]
+2025-02-06 18:31:22.550313: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: INVALID_ARGUMENT: No DNN in stream executor.
+	 [[{{node resnet_model/Relu}}]]
+	 [[ArgMax/_3]]
+2025-02-06 18:31:22.550334: I tensorflow/core/framework/local_rendezvous.cc:424] Local rendezvous recv item cancelled. Key hash: 5866837555468538586
+Traceback (most recent call last):
+  File "/home/mlcuser/venv/mlc/lib/python3.10/site-packages/tensorflow/python/client/session.py", line 1407, in _do_call
+    return fn(*args)
+  File "/home/mlcuser/venv/mlc/lib/python3.10/site-packages/tensorflow/python/client/session.py", line 1390, in _run_fn
+    return self._call_tf_sessionrun(options, feed_dict, fetch_list,
+  File "/home/mlcuser/venv/mlc/lib/python3.10/site-packages/tensorflow/python/client/session.py", line 1483, in _call_tf_sessionrun
+    return tf_session.TF_SessionRun_wrapper(self._session, options, feed_dict,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: 2 root error(s) found.
+  (0) INVALID_ARGUMENT: No DNN in stream executor.
+	 [[{{node resnet_model/Relu}}]]
+	 [[ArgMax/_3]]
+  (1) INVALID_ARGUMENT: No DNN in stream executor.
+	 [[{{node resnet_model/Relu}}]]
+0 successful operations.
+0 derived errors ignored.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mlcuser/MLC/repos/local/cache/get-git-repo_7616a5a9/inference/vision/classification_and_detection/python/main.py", line 781, in <module>
+    main()
+  File "/home/mlcuser/MLC/repos/local/cache/get-git-repo_7616a5a9/inference/vision/classification_and_detection/python/main.py", line 679, in main
+    _ = backend.predict({backend.inputs[0]: img})
+  File "/home/mlcuser/MLC/repos/local/cache/get-git-repo_7616a5a9/inference/vision/classification_and_detection/python/backend_tf.py", line 82, in predict
+    return self.sess.run(self.outputs, feed_dict=feed)
+  File "/home/mlcuser/venv/mlc/lib/python3.10/site-packages/tensorflow/python/client/session.py", line 977, in run
+    result = self._run(None, fetches, feed_dict, options_ptr,
+  File "/home/mlcuser/venv/mlc/lib/python3.10/site-packages/tensorflow/python/client/session.py", line 1220, in _run
+    results = self._do_run(handle, final_targets, final_fetches,
+  File "/home/mlcuser/venv/mlc/lib/python3.10/site-packages/tensorflow/python/client/session.py", line 1400, in _do_run
+    return self._do_call(_run_fn, feeds, fetches, targets, options,
+  File "/home/mlcuser/venv/mlc/lib/python3.10/site-packages/tensorflow/python/client/session.py", line 1426, in _do_call
+    raise type(e)(node_def, op, message)  # pylint: disable=no-value-for-parameter
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Graph execution error:
+
+Detected at node 'resnet_model/Relu' defined at (most recent call last):
+Node: 'resnet_model/Relu'
+Detected at node 'resnet_model/Relu' defined at (most recent call last):
+Node: 'resnet_model/Relu'
+2 root error(s) found.
+  (0) INVALID_ARGUMENT: No DNN in stream executor.
+	 [[{{node resnet_model/Relu}}]]
+	 [[ArgMax/_3]]
+  (1) INVALID_ARGUMENT: No DNN in stream executor.
+	 [[{{node resnet_model/Relu}}]]
+0 successful operations.
+0 derived errors ignored.
+
+Original stack trace for 'resnet_model/Relu':
+

@@ -1,0 +1,7 @@
+{
+  "system_name": "6601a7c2ed05",
+  "implementation": "reference",
+  "device": "gpu",
+  "framework": "pytorch",
+  "run_config": "cu124"
+}
